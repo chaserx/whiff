@@ -4,6 +4,8 @@ _catch a whiff of this._
 
 an interface to sniffing MAC addresses on the local network through [arp-scan](http://www.nta-monitor.com/wiki/index.php/Arp-scan_Documentation).
 
+## Getting Started
+
 **installing arp-scan**
 
 mac os x:
@@ -44,3 +46,6 @@ either of these should return something similar to the following:
     537 packets received by filter, 0 packets dropped by kernel
     Ending arp-scan 1.8: 256 hosts scanned in 1.171 seconds (218.62 hosts/sec). 6 responded
 
+**notes to future self**
+
+`MAC_ADDRESS_REGEX = /([0-9A-F]{2}[:-]){5}([0-9A-F]{2})/`
