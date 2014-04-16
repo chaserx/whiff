@@ -34,18 +34,27 @@ where 10.0.1.1 is the IP address of your router, and wlan0 is the name of your a
 
 either of these should return something similar to the following:
 
-    Interface: en1, datalink type: EN10MB (Ethernet)
-    Starting arp-scan 1.8 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
-    10.0.1.29   00:13:21:c1:28:9a
-    10.0.1.4    20:c9:d0:b5:61:21
-    10.0.1.3    8c:3a:e3:98:81:2d
-    10.0.1.8    94:94:26:95:09:f0
-    10.0.1.2    00:00:48:64:11:ef
-    10.0.1.200  b8:27:eb:13:65:e7
+        Interface: en1, datalink type: EN10MB (Ethernet)
+        Starting arp-scan 1.8 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+        10.0.1.29   00:13:21:c1:28:9a
+        10.0.1.4    20:c9:d0:b5:61:21
+        10.0.1.3    8c:3a:e3:98:81:2d
+        10.0.1.8    94:94:26:95:09:f0
+        10.0.1.2    00:00:48:64:11:ef
+        10.0.1.200  b8:27:eb:13:65:e7
 
-    537 packets received by filter, 0 packets dropped by kernel
-    Ending arp-scan 1.8: 256 hosts scanned in 1.171 seconds (218.62 hosts/sec). 6 responded
+        537 packets received by filter, 0 packets dropped by kernel
+        Ending arp-scan 1.8: 256 hosts scanned in 1.171 seconds (218.62 hosts/sec). 6 responded
 
 **whiff usage**
 
 `sudo ruby ./whiff.rb`
+
+results in:
+
+        00:13:21:c1:28:9a
+        20:c9:d0:b5:61:21
+        8c:3a:e3:98:81:2d
+        94:94:26:95:09:f0
+        00:00:48:64:11:ef
+        b8:27:eb:13:65:e7
