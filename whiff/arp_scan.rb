@@ -7,6 +7,7 @@ module ArpScan
 
   def self.fetch(ip_address, interface, options={})
     raise 'Must run as root' unless Process.uid == 0
+    raise 'arp-scan not installed' unless arp_scan_installed?
     raise 'invalid IP address' unless ip_address =~ IP_ADDRESS_REGEX
     cmd = "arp-scan -l -s #{ip_address} -I #{interface} -q"
     addresses = []
@@ -22,5 +23,10 @@ module ArpScan
 
   def self.extract_mac_address(str)
     str.match(MAC_ADDRESS_REGEX) { |m| m }
+  end
+
+  def self.arp_scan_installed?
+    `which arp-scan`
+    $?.success?
   end
 end
