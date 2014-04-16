@@ -18,7 +18,7 @@ linux:
 1. sudo apt-get update
 1. sudo apt-get intall arp-scan
 
-**running arp-scan**
+**arp-scan usage**
 
 on mac os x, try:
 
@@ -45,3 +45,7 @@ either of these should return something similar to the following:
 
     537 packets received by filter, 0 packets dropped by kernel
     Ending arp-scan 1.8: 256 hosts scanned in 1.171 seconds (218.62 hosts/sec). 6 responded
+
+**whiff usage**
+
+`sudo ruby ./whiff.rb`
