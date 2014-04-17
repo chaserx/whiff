@@ -2,7 +2,7 @@
 
 _catch a whiff of this._
 
-an interface to sniffing MAC addresses on the local network through [arp-scan](http://www.nta-monitor.com/wiki/index.php/Arp-scan_Documentation) and then hit some trigger.
+an interface to sniffing MAC addresses on the local network through [arp-scan](http://www.nta-monitor.com/wiki/index.php/Arp-scan_Documentation).
 
 ## Getting Started
 
