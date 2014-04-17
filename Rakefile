@@ -1,1 +1,1 @@
-# rake tasks?
+require "bundler/gem_tasks"

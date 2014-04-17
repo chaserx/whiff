@@ -48,7 +48,7 @@ either of these should return something similar to the following:
 
 **whiff usage**
 
-`sudo ruby ./whiff.rb`
+`ArpScan.fetch('10.0.1.1', 'en1', verbose: true)`
 
 results in:
 
