@@ -1,6 +1,5 @@
 module Whiff
   module ArpScan
-    require 'open3'
 
     IP_ADDRESS_REGEX = /\A(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\Z/
 
@@ -12,10 +11,9 @@ module Whiff
       raise 'invalid IP address' unless ip_address =~ IP_ADDRESS_REGEX
       cmd = "arp-scan -l -s #{ip_address} -I #{interface} -q"
       addresses = []
-      Open3.popen3(cmd) do |stdin, stdout, sterr, wait_thr|
-        stdout.each_line do |line|
-          addresses << extract_mac_address(line)
-        end
+      stdout = `#{cmd}`
+      stdout.each_line do |line|
+        addresses << extract_mac_address(line)
       end
       addresses.delete_if{|a| a.nil?}.uniq!
       puts addresses if options[:verbose]
