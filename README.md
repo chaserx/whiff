@@ -4,6 +4,8 @@ _catch a whiff of this._
 
 an interface to sniffing MAC addresses on the local network through [arp-scan](http://www.nta-monitor.com/wiki/index.php/Arp-scan_Documentation).
 
+[![Build Status](https://travis-ci.org/chaserx/whiff.svg?branch=master)](https://travis-ci.org/chaserx/whiff)
+
 ## Getting Started
 
 **installing arp-scan**

@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.1.0
+  - 2.0.0
+  - 1.9.3
+script: bundle exec rspec spec
+cache: apt
+before_install:
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq arp-scan
