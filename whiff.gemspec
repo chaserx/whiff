@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Chase Southard"]
   spec.email         = ["chase.southard@gmail.com"]
   spec.summary       = %q{A ruby wrapper for arp-scan.}
-  spec.description   = %q{A ruby wrapper for arp-scan. Returns array of MAC addresses}
+  spec.description   = %q{A ruby wrapper for arp-scan. Currently, returns an array of MAC addresses.}
   spec.homepage      = "https://github.com/chaserx/whiff"
   spec.license       = "MIT"
 
