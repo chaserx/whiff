@@ -2,11 +2,12 @@ require "spec_helper"
 
 module Whiff::ArpScan
   describe "fetching MAC addresses through arp-scan" do
-
-    let(:env) { "PATH=#{File.expand_path(File.join('..', 'spec', 'data', 'bin'), File.dirname(__FILE__))}:$PATH" }
+    let(:bin_dir) { File.join('spec', 'data', 'bin') }
+    let(:path_env) { File.expand_path(bin_dir) }
+    let(:env) { "PATH=#{path_env}:$PATH" }
 
     it "returns an array" do
-      output = Whiff::ArpScan.fetch('10.0.1.1', 'en1', test: true, env: :env, verbose: true)
+      output = Whiff::ArpScan.fetch('10.0.1.1', 'en1', test: true, env: env)
       expect(output.class).to eq(Array)
     end
 
@@ -27,9 +28,9 @@ module Whiff::ArpScan
     end
 
     it "returns an array of MAC addresses" do
-      output = Whiff::ArpScan.fetch('10.0.1.1', 'en1', test: true, env: :env, verbose: true)
+      output = Whiff::ArpScan.fetch('10.0.1.1', 'en1', test: true, env: env)
       expect(output.size).to be > 0
-      expect(output[0]).to match(MAC_ADDRESS_REGEX)
+      expect(output[0].to_s).to match(MAC_ADDRESS_REGEX)
     end
   end
 end

@@ -10,6 +10,7 @@ module Whiff
       raise 'arp-scan not installed' unless arp_scan_installed?
       raise 'invalid IP address' unless ip_address =~ IP_ADDRESS_REGEX
       cmd = "#{options[:env]} arp-scan -l -s #{ip_address} -I #{interface} -q"
+      puts cmd
       addresses = []
       stdout = `#{cmd}`
       stdout.each_line do |line|
