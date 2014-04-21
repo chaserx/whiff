@@ -1,0 +1,7 @@
+Interface: en1, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.8 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+10.0.1.7	b8:8d:12:59:43:b9
+10.0.1.29	00:13:21:c1:28:9a
+
+519 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.8: 256 hosts scanned in 1.176 seconds (217.69 hosts/sec). 2 responded

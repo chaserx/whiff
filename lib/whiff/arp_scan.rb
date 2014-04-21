@@ -6,10 +6,11 @@ module Whiff
     MAC_ADDRESS_REGEX = /([0-9A-F]{2}[:]){5}([0-9A-F]{2})/i
 
     def self.fetch(ip_address, interface, options={})
-      raise 'Must run as root' unless Process.uid == 0
+      raise 'Must run as root' unless options[:test] == true || Process.uid == 0
       raise 'arp-scan not installed' unless arp_scan_installed?
       raise 'invalid IP address' unless ip_address =~ IP_ADDRESS_REGEX
-      cmd = "arp-scan -l -s #{ip_address} -I #{interface} -q"
+      cmd = "#{options[:env]} arp-scan -l -s #{ip_address} -I #{interface} -q"
+      puts cmd
       addresses = []
       stdout = `#{cmd}`
       stdout.each_line do |line|
